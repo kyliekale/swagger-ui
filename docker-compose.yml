@@ -1,0 +1,15 @@
+version: '2'
+services:
+  swagger_ui_novolume
+    build: .
+    restart: always
+    ports:
+      - 80
+      
+  swagger_ui_volume:
+    build: .
+    restart: always
+    volumes:
+      - ./petstore-swagger.json /app/swagger.json
+    ports:
+      - 80
